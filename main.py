@@ -1,4 +1,5 @@
 import streamlit as st
+st.write(Xin chào mọi người)
 st.title('Tạo tài khoản')
 ten=st.text_input('Tên đăng nhập')
 mk=st.text_input('Mật khẩu')
