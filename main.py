@@ -1,12 +1,19 @@
 import streamlit as st
-st.write(Xin chào mọi người)
 st.title('Tạo tài khoản')
-ten=st.text_input('Tên đăng nhập')
-mk=st.text_input('Mật khẩu')
-bar=st.progress(0)
-if ten=='' and mk=='' :
-  bar.progress(0)
-elif ten=='' or mk=='':
-  bar.progress(50)
-else:
-  bar.progress(100)
+x=0
+a=st.text_input('Tài khoản')
+if a!='':
+  x+=20
+b=st.text_input('Mật khẩu')
+if b!='':
+  x+=20
+c=st.text_input('Nhập lại mật khẩu')
+if c!='':
+  x+=20
+d=st.text_input('Tên người dùng')
+if d!='':
+  x+=20
+e=st.text_input('Email')
+if e!='':
+  x+=20
+st.progress(x)
