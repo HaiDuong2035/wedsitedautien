@@ -18,13 +18,13 @@ with c2:
     choice='cho'
 with c3:
   if st.button('Su tu'):
-    choice='su tu'
+    choice='sutu'
 with c4:
   if st.button('Ngua'):
     choice='ngua'
 with c5:
   if st.button('Thien nga'):
-    choice='thien nga'
+    choice='thiennga'
 st.write(dict[choice])
 with st.sidebar:
   st.write('Trac nghiem kiem tra tinh cach')
