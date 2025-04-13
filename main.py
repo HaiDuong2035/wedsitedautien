@@ -1,6 +1,6 @@
 import streamlit as st
 st.set_page_config(page_title='Trac nghiem kiem tra tinh cach',page_icon='♫',layout='wide')
-st.title('Trac nghiem kiem tra tinh cach')
+st.title('Trac nghiem kiem tra tinh cach by duong')
 dict={
 '':'ban chua chon con gi',
 'meo':'lua chon nay cho thay ban chua san sang de bat dau cong viec, khao khat duoc di nghi',
