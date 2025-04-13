@@ -1,6 +1,6 @@
 import streamlit as st
 st.set_page_config(page_title='Trac nghiem kiem tra tinh cach',page_icon='♫',layout='wide')
-st.title('Trac nghiem kiem tra tinh cach by duong')
+st.title('Trac nghiem kiem tra tinh cach')
 dict={
 '':'ban chua chon con gi',
 'meo':'lua chon nay cho thay ban chua san sang de bat dau cong viec, khao khat duoc di nghi',
@@ -18,13 +18,13 @@ with c2:
     choice='cho'
 with c3:
   if st.button('Su tu'):
-    choice='sutu'
+    choice='su tu'
 with c4:
   if st.button('Ngua'):
     choice='ngua'
 with c5:
   if st.button('Thien nga'):
-    choice='thiennga'
+    choice='thien nga'
 st.write(dict[choice])
 with st.sidebar:
   st.write('Trac nghiem kiem tra tinh cach')
