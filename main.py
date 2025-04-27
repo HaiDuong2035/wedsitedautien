@@ -1,21 +1,55 @@
 import streamlit as st
-st.set_page_config(page_title="Giới thiệu Calliope Mori", layout="centered")
-st.sidebar.title("🎤 Calliope Mori")
-st.sidebar.image("https://hololive.hololivepro.com/wp-content/uploads/2020/07/Mori-Calliope_pr-img_01.png", use_container_width=True)
-st.sidebar.markdown("""
-**Nghệ danh**: Calliope Mori  
-**Thuộc nhóm**: Hololive English - Myth  
-**Debut**: 12/09/2020  
-**Phong cách**: Rap, J-Rap, Hip-hop  
-**Bài hát nổi bật**:  
-- *Go-Getters*  
-- *Red*  
-- *End of a Life*
-""")
-st.title("🎶 Giới thiệu Calliope Mori")
-st.subheader("🎧 Nghe thử bài hát End of a life")
-audio_url = "https://rr3---sn-i3b7knse.googlevideo.com/videoplayback?expire=1745668661&ei=1XUMaIPcCs6y2roP7-aZoAI&ip=103.16.227.98&id=o-ACMCRjqi-8_bYTHMuZlnEagzatFyg9iq6DWMD6v3uj8D&itag=140&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AecWEAbkXQW2n_nr-OsukrGAVlxCCEM0bEuCh3y-HbW3xUdxQf0EN_ZORzlRcV-a-mdFSNY00KtU6yao&vprv=1&svpuc=1&mime=audio%2Fmp4&ns=5Bl6NlmGU15QA-fn-_kf0FoQ&rqh=1&gir=yes&clen=4671448&dur=288.600&lmt=1726230257877416&keepalive=yes&lmw=1&fexp=24350590,24350737,24350827,24350961,24351173,24351429,24351431,24351495,24351528,24351543,24351545,24351638,24351658,24351661,24351662,24351672,24351704,24351790,24351859,51466698&c=TVHTML5&sefc=1&txp=4532434&n=s_teOMzkBjmPyA&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRgIhAMMYX85Dv2IoARgctSPy_Gyh19Icl0f6PUiDry4YXOagAiEA9VQ-f-6c4nhponMawwNQkWkLPvHzEFyKGPgYhkuEnCI%3D&rm=sn-x5guiuxaxjvh-jb2z7l,sn-x5guiuxaxjvh-q5jk7d,sn-h55ey7z&rrc=79,79,104&req_id=5531327f7a3da3ee&cmsv=e&rms=nxu,au&redirect_counter=3&cms_redirect=yes&ipbypass=yes&met=1745647136,&mh=XK&mip=1.55.166.242&mm=30&mn=sn-i3b7knse&ms=nxu&mt=1745646745&mv=m&mvi=3&pl=24&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=ACuhMU0wRAIgPJSM34kDNN_A5ZnD1eXLfiZOCeOgTxMNHkK_u9fQ8UQCIGYxoxSHn-eLOzmgTtnxapw0Bkd3JF4pUsrKUTnSaUpj"
-st.audio(audio_url)
-st.subheader("📺 Xem MV Go-Getters")
-video_url = "https://www.youtube.com/watch?v=j7RbmhKeaZs"
-st.video(video_url)
+st.set_page_config(page_title='Thong tin dong vat',page_icon='',layout='wide')
+st.title('Thông tin động vật')
+dict={
+'':'Bạn chưa chọn con gì',
+'meo':'Mèo là động vật có vú, nhỏ nhắn và chuyên ăn thịt, sống chung với loài người, được nuôi để săn vật gây hại hoặc làm thú nuôi cùng với chó.',
+'cho':'Chó, là một loài động vật thuộc chi Chó (Canis), tạo nên một phần tiến hóa của sói, đồng thời là loài động vật ăn thịt trên cạn có số lượng lớn nhất. Chó và sói xám thuộc nhóm chị em, giống như những loài sói hiện đại đều không có họ hàng gần đến những loài sói được thuần hóa đầu tiên, đồng nghĩa với tổ tiên gốc của chó đã bị tuyệt chủng.',
+'sutu':'Sư tử (Panthera leo) là một trong những loài đại miêu của họ Mèo, chi Báo, được mệnh danh là "chúa tể rừng xanh" (king of the jungle) hay "vua của muôn thú" (king of beasts).',
+'ngua':'Ngựa hay mã, ngọ (Equus ferus caballus) là một loài động vật có vú trong họ Equidae, bộ Perissodactyla. Loài này được Linnaeus mô tả năm 1758., và là một trong số 8 phân loài còn sinh tồn cho tới ngày nay của họ Equidae.',
+'thiennga':'Thiên nga là một nhóm chim nước cỡ lớn thuộc họ Vịt, cùng với ngỗng và vịt. Thiên nga và ngỗng có quan hệ gần gũi, cùng được xếp vào phân họ Ngỗng trong đó thiên nga làm thành tông Cygnini. Đôi khi, chúng được phân loại thành một phân họ riêng có tên là Cygninae.'}
+choice=''
+c1,c2,c3,c4,c5=st.columns(5)
+with c1:
+  if st.button('Mèo'):
+    choice='meo'
+with c2:
+  if st.button('Chó'):
+    choice='cho'
+with c3:
+  if st.button('Sư tử'):
+    choice='sutu'
+with c4:
+  if st.button('Ngựa'):
+    choice='ngua'
+with c5:
+  if st.button('Thiên nga'):
+    choice='thiennga'
+with st.sidebar:
+  st.write('Thông tin động vật')
+  if choice=='':
+    st.write('bạn chưa chọn con gì')
+  else:
+    st.write(dict[choice])
+if choice=='':
+  st.write('bạn chưa chọn con gì')
+elif choice=='meo':
+  st.image('https://fagopet.vn/storage/in/r5/inr5f4qalj068szn2bs34qmv28r2_phoi-giong-meo-munchkin.webp')
+  st.audio('https://pic.pikbest.com/00/28/50/28s888piCXKr.mp3')
+  st.video('https://youtu.be/WeOTW8mCSHQ?si=vIQxBZ6Iu1KgwSkF')
+elif choice=='cho':
+  st.image('https://kimipet.vn/wp-content/uploads/2022/10/cho-pug-de-thuong.jpg')
+  st.audio('https://pic.pikbest.com/00/42/86/714888piCvzr.mp3')
+  st.video('https://youtu.be/qxQPPOYoqU0?si=60FDMT4Vb3fGw1-x')
+elif choice=='sutu':
+  st.image('https://thanksofa.com/wp-content/uploads/Su-tu-Lion-Panthera-leo-ThankSofa-Anh-1.webp')
+  st.audio('https://pic.pikbest.com/00/21/58/204888piCCSP.mp3')
+  st.video('https://youtu.be/oWc3_C4EtbQ?si=jnlyKKKyrmFbbLEM')
+elif choice=='ngua':
+  st.image('https://img.cand.com.vn/resize/800x800/NewFiles/Images/2022/11/02/1416hinh_anh_chu_ngua_o_dung_man-1667380309457.jpg')
+  st.audio('https://pic.pikbest.com/00/24/25/465888piCQ9H.mp3')
+  st.video('https://youtu.be/9m5VxpXKGSk?si=zpB8QIC22Q5Rno_3')
+elif choice=='thiennga':
+  st.image('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/CygneVaires.jpg/500px-CygneVaires.jpg')
+  st.audio('https://pic.pikbest.com/00/86/53/62w888piCGVC.mp3')
+  st.video('https://youtu.be/oMfXIJS-1sI?si=g8ZK68ZOHOZ3zja7')
